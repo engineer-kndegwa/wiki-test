@@ -1,4 +1,11 @@
 /* Main CSS Styling will come here */
 body {
     font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
