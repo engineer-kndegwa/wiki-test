@@ -20,3 +20,5 @@ documentation.
 8. Upload the source to online version control system like github or gitlab and share
 the URL
 9. Do not make the page too fancy, just try to get this done in 2 hours max.
+
+# THIS WAS FUN!
