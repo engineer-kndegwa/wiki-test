@@ -3,8 +3,6 @@
         const API_URL_SUFFIX = "wikipedia.org/api/rest_v1/page/metadata/";
         const input = document.getElementById("title-input");
         const loadingText = document.getElementsByClassName("loading-text")[0];
-        const infoText = document.getElementsByClassName("info")[0];
-        const errorText = document.getElementsByClassName("error")[0];
         const submitArticleTitleBtn = document.getElementById("submit-article-title");
         const resultsSection = document.getElementById('results-section');
         // Language Selection.
@@ -40,13 +38,18 @@
                 dir:"ltr"
             },
             {
-                key: 'de',
-                language: "Deutsch",
+                key: 'ru',
+                language: "Русский",
                 dir:"ltr"
             },
             {
-                key: 'es',
-                language: "Deutsch",
+                key: 'ja',
+                language: "日本語",
+                dir:"ltr"
+            },
+            {
+                key: 'tr',
+                language: "Türkçe",
                 dir:"ltr"
             },
             {
@@ -62,7 +65,7 @@
             return `<option value=${lang.key} dir=${lang.dir}>${lang.language}</option>`
         });
 
-        // Note. InnerHTML is expensive. For consideration later.
+        // NOTE. InnerHTML is expensive. For consideration later.
         selectLanguageParagraph.innerHTML = `<select id="language-options">${options}</select>`;
         submitArticleTitleBtn.addEventListener("click", ()=>{
             // Show loader text
