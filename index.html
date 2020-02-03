@@ -26,19 +26,18 @@
             <h3 id="article-title-heading">Enter article Title: </h3>
             <input type="text" id="title-input" value="" />
 
-            <p>Select language</p>
-            <select>
-                <option value="english">English</option>
-                <option value="french">French</option>
-                <option value="german">German</option>
-                <option value="Spanish">Spanish</option>
-            </select>
+            <p class="select-language-text">Select language</p>
+            <div class="select-language-section"></div>
+
 
         </section>
         <button id="submit-article-title">Get Data!</button>
         <hr>
         <section id="results-section">
-            <h3 class="loading-text">Please wait as we fetch your data...</h3>
+            <h3 class="loading-text hide">Please wait as we fetch your data...</h3>
+            <h3 class="initial-text">Results will appear here</h3>
+            <h3 class="text info hide">Info: Please enter a search query before submitting.</h3>
+            <h3 class="text error hide">Error: No article matching your search query was returned.</h3>
         </section>
     </main>
 

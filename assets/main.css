@@ -5,12 +5,17 @@ body {
     font-family: 'Roboto', sans-serif;
     position: relative;
     background: #f7f7ff;
+    margin: 0.5em;
 }
 
 main {
     position: absolute;
     width: 100%;
     height: 100%;
+    top: 0;
+    right: 0;
+    bottom:0;
+    left: 0;
 }
 
 header {
@@ -45,6 +50,37 @@ button:focus{
     visibility: hidden;
 }
 
-.loading-text {
+.loading-text,
+.initial-text {
     color: rgba(0,0,0,0.3)
+}
+
+.error {
+    color: #EA526F
+}
+
+.info {
+    color: #23b5d3
+}
+
+
+#title-input{
+    border: 2px solid #23b5d3;
+    padding: .5em 1em;
+}
+
+#title-input:focus{
+    outline: none;
+}
+
+.results-section{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.results-list{
+    position: absolute;
+    overflow-y: scroll;
+    width: 100%;
 }
