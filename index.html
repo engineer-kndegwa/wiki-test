@@ -17,10 +17,14 @@
 
 <body>
     <main>
-        <header></header>
+        <header>
+            <h2>
+                Wiki Test API
+            </h2>
+        </header>
         <section>
             <h3 id="article-title-heading">Enter article Title: </h3>
-            <input type="text" class="language-input" />
+            <input type="text" id="title-input" value="" />
 
             <p>Select language</p>
             <select>
@@ -31,9 +35,10 @@
             </select>
 
         </section>
-        <button>Get Data!</button>
+        <button id="submit-article-title">Get Data!</button>
         <hr>
         <section id="results-section">
+            <h3 class="loading-text">Please wait as we fetch your data...</h3>
         </section>
     </main>
 

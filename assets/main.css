@@ -1,11 +1,50 @@
-/* Main CSS Styling will come here */
+/* Main CSS Styling will come here 
+https://coolors.co/ea526f-070600-f7f7ff-23b5d3-279af1
+*/
 body {
     font-family: 'Roboto', sans-serif;
     position: relative;
+    background: #f7f7ff;
 }
 
 main {
     position: absolute;
     width: 100%;
     height: 100%;
+}
+
+header {
+    color: #070600;
+    font-weight: bold;
+}
+
+button {
+    background: #f7f7ff;
+    border: 2px solid #070600;
+    padding: .5em 1em;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+    margin: 2em 0;
+    color: #070600;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+}
+
+button:hover {
+    background: #070600;
+    color: #f7f7ff;
+    cursor: pointer;
+}
+
+button:focus{
+    outline: none;
+}
+
+.hide {
+    display: none;
+    visibility: hidden;
+}
+
+.loading-text {
+    color: rgba(0,0,0,0.3)
 }
