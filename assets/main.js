@@ -3,9 +3,10 @@
         const API_URL_SUFFIX = "wikipedia.org/api/rest_v1/page/metadata/";
         const input = document.getElementById("title-input");
         const loadingText = document.getElementsByClassName("loading-text")[0];
-        const info = document.getElementsByClassName("info")[0];
-        const error = document.getElementsByClassName("error")[0];
+        const infoText = document.getElementsByClassName("info")[0];
+        const errorText = document.getElementsByClassName("error")[0];
         const submitArticleTitleBtn = document.getElementById("submit-article-title");
+        const resultsSection = document.getElementById('results-section');
         // Language Selection.
         const LANGUAGES = [
             {
@@ -66,24 +67,22 @@
         submitArticleTitleBtn.addEventListener("click", ()=>{
             // Show loader text
             loadingText.classList.remove('hide');
-
             // Get Language
             const lang = document.getElementById("language-options").value;
-            const query = input.value;
+            let query = input.value;
             if(query.length){
+            // Wikipedia API favors underscores over spaces
+            query = query.replace(/\s+/g, '_').toLowerCase();
             fetch(`https://${lang}.${API_URL_SUFFIX}${query}`)
             .then(data=>{
                if(data.ok){
                     data
                     .json()
                     .then(info=>{
-                        error.classList.add('hide'); // Info Text Hide
                         loadingText.classList.add('hide');
-                        const resultsSection = document.getElementById('results-section');
                         const data = info.toc.entries.filter(item=>item.html);
                         let text = '';
                         for(let i=0; i < data.length; i++){
-                            console.log(data[i], "here we go")
                             text = text + `<p>${data[i].number}. ${data[i].html}</p>`
                         };
                         resultsSection.innerHTML = `
@@ -101,13 +100,12 @@
             })
             .catch(error=>{
                 loadingText.classList.add('hide');
-                error.classList.remove('hide');
-                console.log(error, "error occured")
+                resultsSection.innerHTML = "<h3 class='text error'>Error: No article matching your search query was returned.</h3>"
+                
             });
             } else {
                 loadingText.classList.add('hide');
-                info.classList.remove('hide');
-                console.log("Nothing submitted")
+                resultsSection.innerHTML = "<h3 class='text info'>Info: Please enter a search query before submitting.</h3>"
             }
         });
     }

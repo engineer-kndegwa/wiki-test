@@ -1,7 +1,7 @@
 /* Main CSS Styling will come here 
 https://coolors.co/ea526f-070600-f7f7ff-23b5d3-279af1
 */
-body {
+html, body {
     font-family: 'Roboto', sans-serif;
     position: relative;
     background: #f7f7ff;
