@@ -1,4 +1,6 @@
 # How to run the app
+1. Run a git clone to get the project locally, i.e: `git clone https://github.com/engineer-kndegwa/wiki-test.git`
+2. Open index.html in your browser.
 
 # Instructions
 
